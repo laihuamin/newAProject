@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/laihuamin/newAProject#readme",
   "dependencies": {
+    "koa": "^2.3.0",
     "webpack": "^3.8.1",
     "webpack-dev-server": "^2.9.3"
   }
