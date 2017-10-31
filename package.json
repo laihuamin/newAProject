@@ -20,10 +20,8 @@
   },
   "homepage": "https://github.com/laihuamin/newAProject#readme",
   "dependencies": {
-    "koa": "^2.3.0",
-    "webpack": "^3.8.1",
-    "webpack-dev-server": "^2.9.3",
     "debug": "^2.6.3",
+    "koa": "^2.3.0",
     "koa-bodyparser": "^3.2.0",
     "koa-convert": "^1.2.0",
     "koa-json": "^2.0.2",
@@ -32,9 +30,16 @@
     "koa-router": "^7.1.1",
     "koa-static": "^3.0.0",
     "koa-views": "^5.2.1",
-    "pug": "^2.0.0-rc.1"
+    "mount-koa-routes": "^2.0.1",
+    "pug": "^2.0.0-rc.1",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.3"
   },
   "devDependencies": {
-    "nodemon": "^1.12.1"
+    "ava": "^0.23.0",
+    "nodemon": "^1.12.1",
+    "sinon": "^4.0.2",
+    "superkoa": "^1.0.3",
+    "zombie": "^5.0.7"
   }
 }
