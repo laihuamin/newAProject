@@ -4,7 +4,9 @@
   "description": "web框架",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node mvc/bin/www",
+    "dev": "./node_modules/.bin/nodemon mvc/bin/www",
+    "prd": "pm2 start mvc/bin/www"
   },
   "repository": {
     "type": "git",
@@ -19,8 +21,20 @@
   "homepage": "https://github.com/laihuamin/newAProject#readme",
   "dependencies": {
     "koa": "^2.3.0",
-    "nodemon": "^1.12.1",
     "webpack": "^3.8.1",
-    "webpack-dev-server": "^2.9.3"
+    "webpack-dev-server": "^2.9.3",
+    "debug": "^2.6.3",
+    "koa-bodyparser": "^3.2.0",
+    "koa-convert": "^1.2.0",
+    "koa-json": "^2.0.2",
+    "koa-logger": "^2.0.1",
+    "koa-onerror": "^1.2.1",
+    "koa-router": "^7.1.1",
+    "koa-static": "^3.0.0",
+    "koa-views": "^5.2.1",
+    "pug": "^2.0.0-rc.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.1"
   }
 }
