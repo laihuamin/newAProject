@@ -5,7 +5,7 @@ const glob = require('glob');
 const path = require('path');
 
 const FILE_PATH = './src/pages/**/index.js';
-const 
+const CUT_PATH = './src/pages'
 
 exports.getentries = function (argv) {
     // 获取文件路径
@@ -17,11 +17,21 @@ exports.getentries = function (argv) {
     try {
         
         argv = JSON.parse(argv).remain;
-        keywords = (argv.length ? argv[0].slice(2) : '').split(',')
+        keywords = (argv.length ? argv[0].slice(2) : '').split(',');
     } catch(e) {
-        keywords = []
+        keywords = [];
     }
     paths = paths.filter((value) => {
-        
+        keywords.forEach((item) => {
+            if(value.indexOf(item) !== -1) {
+                return true;
+            }
+        })
+        return false;
     })
+    paths.forEach((item) => {
+        let pathName = path.dirname(item).replace(new RegExp('^' + CUT_PATH), '');
+        entries[pathName] = item;
+    })
+    return entries;
 }
