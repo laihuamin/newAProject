@@ -1,11 +1,19 @@
+// os模块的话提供了一些基础的操作系统函数
 const os = require('os')
+//该模块用于合并webpack的配置项
 const merge = require('webpack-merge')
 const webpack = require('webpack')
+//引入webpack的公共base配置
 const baseWebpackConfig = require('./webpack.base.config.js')
+//webpack打包前用于清理文件夹的插件
 const CleanWebpackPlugin = require('clean-webpack-plugin')
+//打包html的插件
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+//将css单独打包的插件
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+//分析包体依赖，并提供可视化的界面，可以提醒你引入某个功能的时候，只需要引入某一个模块
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+//webpack会调用内部的cssnano模块对css进行压缩
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 // const WebpackMd5Hash = require('webpack-md5-hash')
 const UglifyJsParallelPlugin = require('webpack-uglify-parallel')
@@ -100,7 +108,7 @@ var buildConfig = merge(baseWebpackConfig, {
         ]
     },
     plugins: [
-        // 配置 Node 环境变量
+        // 配置 Node 环境变量，设置合适的环境变量，更有利于webpack去压缩代码
         new webpack.DefinePlugin({
             'process.env': {
                 NODE_ENV: config.prod.env
